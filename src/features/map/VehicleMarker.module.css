@@ -1,0 +1,96 @@
+.pinWrapper {
+  background: transparent;
+  border: 0;
+}
+
+.pin {
+  position: relative;
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 9999px;
+  border: 2px solid #f8fafc;
+  background-color: var(--vehicle-color, #38bdf8);
+  box-shadow: 0 0 0 2px rgba(2, 6, 23, 0.8), 0 0 12px var(--vehicle-glow, rgba(56, 189, 248, 0.45));
+}
+
+.pin::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 2px;
+  border-radius: 9999px;
+  background: #f8fafc;
+  box-shadow: 0 0 6px rgba(15, 23, 42, 0.65);
+  transform-origin: 0% 50%;
+  transform: translate(0, -50%) rotate(var(--vehicle-heading, 0deg));
+  transition: transform 0.3s ease;
+}
+
+.pin::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 9999px;
+  border: 1px solid var(--vehicle-glow, rgba(56, 189, 248, 0.45));
+  animation: pulseRing 1.8s ease-out infinite;
+}
+
+.selected {
+  transform: scale(1.15);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.8), 0 0 18px rgba(56, 189, 248, 0.55);
+}
+
+.recentEntry {
+  animation: geofenceEntryPulse 1.8s ease-out;
+}
+
+.pickupPulse {
+  animation: pickupPulse 1.6s ease-out;
+}
+
+.legendSwatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  border: 1px solid rgba(15, 23, 42, 0.65);
+}
+
+@keyframes geofenceEntryPulse {
+  0% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.8), 0 0 14px rgba(168, 85, 247, 0.5);
+  }
+  100% {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 8px rgba(168, 85, 247, 0), 0 0 18px rgba(168, 85, 247, 0.2);
+  }
+}
+
+@keyframes pickupPulse {
+  0% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7), 0 0 12px rgba(56, 189, 248, 0.5);
+  }
+  100% {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 8px rgba(56, 189, 248, 0), 0 0 18px rgba(56, 189, 248, 0.25);
+  }
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(1.2);
+    opacity: 0.15;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}

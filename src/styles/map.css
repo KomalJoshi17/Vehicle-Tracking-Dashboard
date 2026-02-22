@@ -1,0 +1,124 @@
+.vehicle-map {
+  background-color: #0f172a;
+}
+
+.vehicle-map .leaflet-tile {
+  image-rendering: auto;
+}
+
+.vehicle-map .leaflet-control-zoom a,
+.vehicle-map .leaflet-control-attribution {
+  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.vehicle-map--dark .leaflet-control-zoom a,
+.vehicle-map--dark .leaflet-control-attribution {
+  background-color: rgba(15, 23, 42, 0.86);
+  color: #cbd5e1;
+  border-color: #334155;
+}
+
+.vehicle-map--dark .leaflet-control-attribution a {
+  color: #93c5fd;
+}
+
+.vehicle-map--light .leaflet-control-zoom a,
+.vehicle-map--light .leaflet-control-attribution {
+  background-color: rgba(248, 250, 252, 0.88);
+  color: #1e293b;
+  border-color: #cbd5e1;
+}
+
+.vehicle-map--light .leaflet-control-attribution a {
+  color: #2563eb;
+}
+
+.vehicle-map .leaflet-container {
+  background: #020617;
+}
+
+.vehicle-map--light .leaflet-container {
+  background: #f1f5f9;
+}
+
+.map-theme-toggle {
+  backdrop-filter: blur(6px);
+}
+
+.map-legend {
+  backdrop-filter: blur(4px);
+}
+
+.map-legend--dark {
+  border: 1px solid rgba(51, 65, 85, 0.8);
+  background: rgba(2, 6, 23, 0.7);
+}
+
+.map-legend--light {
+  border: 1px solid rgba(148, 163, 184, 0.75);
+  background: rgba(248, 250, 252, 0.78);
+}
+
+.map-legend__title,
+.map-legend__list {
+  transition: color 160ms ease;
+}
+
+.map-legend--dark .map-legend__title {
+  color: #cbd5e1;
+}
+
+.map-legend--dark .map-legend__list {
+  color: #e2e8f0;
+}
+
+.map-legend--light .map-legend__title {
+  color: #334155;
+}
+
+.map-legend--light .map-legend__list {
+  color: #1e293b;
+}
+
+.map-legend__swatch {
+  display: inline-block;
+}
+
+.office-geofence {
+  transition: stroke-opacity 200ms ease, fill-opacity 200ms ease;
+}
+
+.office-geofence--active {
+  animation: geofenceHalo 1.6s ease-out;
+}
+
+.office-marker {
+  filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.45));
+}
+
+.leaflet-tooltip {
+  border-radius: 6px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  box-shadow: none;
+}
+
+.vehicle-map--dark .leaflet-tooltip {
+  background: rgba(15, 23, 42, 0.92);
+  color: #e2e8f0;
+}
+
+.vehicle-map--light .leaflet-tooltip {
+  background: rgba(248, 250, 252, 0.95);
+  color: #1e293b;
+}
+
+@keyframes geofenceHalo {
+  0% {
+    stroke-opacity: 0.85;
+    fill-opacity: 0.2;
+  }
+  100% {
+    stroke-opacity: 0.5;
+    fill-opacity: 0.12;
+  }
+}
